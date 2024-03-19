@@ -1,0 +1,34 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url:  jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  config:
+    import: 
+      - "application-staging.yaml"
+      - "application-prod.yaml"
+  profiles:
+    active: "local"
+
+build:
+  version: "3.0"
+  
+accounts:
+  message: "Welcome to XBank accounts related local APIs"
+  contactDetails:
+    name: "John Doe - Developer"
+    email: "john@xbank.com"
+  onCallSupport:
+    - (+62) 858-8888-8888
+    - (+62) 838-8818-8883

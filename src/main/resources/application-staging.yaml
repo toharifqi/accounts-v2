@@ -1,0 +1,16 @@
+spring:
+  config:
+    activate:
+      on-profile: "staging"
+
+build:
+  version: "2.0"
+
+accounts:
+  message: "Welcome to XBank accounts related QA APIs"
+  contactDetails:
+    name: "Alan Runner - QA Lead"
+    email: "alan@xbank.com"
+  onCallSupport:
+    - (+62) 858-4312-3212
+    - (+62) 838-3213-4321
