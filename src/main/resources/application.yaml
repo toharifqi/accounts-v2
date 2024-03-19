@@ -1,6 +1,10 @@
 server:
   port: 8080
-spring:
+spring: 
+  application:
+    name: "accounts"
+  profiles:
+    active: "prod"
   datasource:
     url:  jdbc:h2:mem:testdb
     driverClassName: org.h2.Driver
@@ -15,20 +19,4 @@ spring:
       ddl-auto: update
     show-sql: true
   config:
-    import: 
-      - "application-staging.yaml"
-      - "application-prod.yaml"
-  profiles:
-    active: "local"
-
-build:
-  version: "3.0"
-  
-accounts:
-  message: "Welcome to XBank accounts related local APIs"
-  contactDetails:
-    name: "John Doe - Developer"
-    email: "john@xbank.com"
-  onCallSupport:
-    - (+62) 858-8888-8888
-    - (+62) 838-8818-8883
+    import: "optional:configserver:http://localhost:8071/"
